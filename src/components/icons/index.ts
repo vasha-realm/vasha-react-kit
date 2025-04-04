@@ -1,0 +1,1 @@
+export { default as IconVashaPainter } from './icon-vasha-painter/icon-vasha-painter';
