@@ -11,7 +11,7 @@ const Container = (containerProps: ContainerProps) => {
   return (
     <div className={`w-screen h-screen overflow-hidden ${classNames}`}>
       {header && <header>{header}</header>}
-      <main className={mainClassNames}>{children}</main>
+      <main className={`size-full ${mainClassNames}`}>{children}</main>
       {footer && <footer>{footer}</footer>}
     </div>
   );

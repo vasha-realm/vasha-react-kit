@@ -1,1 +1,2 @@
-export { default as IconVashaPainter } from './icon-vasha-painter/icon-vasha-painter';
+export { default as SvgPainter } from './svg-painter';
+export { default as IconClose } from './icon-close/icon-close';
