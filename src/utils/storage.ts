@@ -1,14 +1,7 @@
 const DEFAULT_PREFIX = 'vasha';
-const DEFAULT_PORJECT = 'react-kit';
 
-export interface StorageOptions {
-  prefixKey?: string;
-  projectKey?: string;
-}
-
-const useLocalStorage = (options?: StorageOptions) => {
-  const prefixKey = options?.prefixKey || DEFAULT_PREFIX;
-  const projectKey = options?.projectKey || DEFAULT_PORJECT;
+const useLocalStorage = (projectKey: string) => {
+  const prefixKey = DEFAULT_PREFIX;
 
   const generateKey = (key: string): string => `${prefixKey}-${projectKey}-${key}`
 
