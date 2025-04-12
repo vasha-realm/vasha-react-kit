@@ -1,3 +1,4 @@
+'use client'
 import { useState } from "react";
 import Radio from "./radio";
 import { RadioGroupProps, RadioValueType } from "./type";
