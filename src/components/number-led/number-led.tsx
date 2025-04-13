@@ -51,6 +51,7 @@ const SingleNum = (prop: SingleNumProps) => {
 
 interface NumLedProps {
   num: string;
+  prefix?: string;
   classNames?: string;
   background?: boolean;
   stroke?: string;
@@ -58,9 +59,11 @@ interface NumLedProps {
 }
 
 const NumberLed = (prop: NumLedProps) => {
-  const { num, classNames = '', background = false, stroke = '#ffffff', style = {} } = prop;
+  const { num, prefix = '', classNames = '', background = false, stroke = '#ffffff', style = {} } = prop;
   const numArr = num.toString().split('');
-  const amount = numArr.length
+  const numAmount = numArr.length
+  const prefixAmount = prefix.length
+  const amount = numAmount + prefixAmount
   const width = 38
   const height = 68
   const totalWidth = amount * width + (amount - 1) * 8
@@ -68,6 +71,11 @@ const NumberLed = (prop: NumLedProps) => {
   return (
     <div className={`flex items-center justify-between ${classNames}`}
       style={{ aspectRatio: radio, ...style }}>
+      {prefix.length > 0 && (
+        prefix.split('').map((n, idx) => (
+          <SingleNum key={idx} value={Number(n)} background={background} stroke={'#89898d'} />
+        ))
+      )}
       {numArr.map((n, idx) => (
         <SingleNum key={idx} value={Number(n)} background={background} stroke={stroke} />
       ))}
