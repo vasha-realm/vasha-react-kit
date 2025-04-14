@@ -24,10 +24,7 @@ const useLocalStorage = (projectKey: string) => {
       const fullKey = generateKey(key);
 
       try {
-        const stringValue = typeof value === 'object'
-          ? JSON.stringify(value)
-          : String(value);
-
+        const stringValue = JSON.stringify(value);
         localStorage.setItem(fullKey, stringValue);
       } catch (e) {
         console.error('存储数据失败:', e);

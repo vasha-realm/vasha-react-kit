@@ -9,7 +9,7 @@ export type RadioGroupProps = {
   radios?: RadioType[];
   classNames?: string;
   defaultPickedVal?: RadioValueType;
-  radioGroupStatusChanged?: (newVal?: RadioValueType) => void;
+  radioGroupStatusChanged: (newVal: RadioValueType) => void;
 }
 
 export type RadioProps = {
@@ -18,3 +18,8 @@ export type RadioProps = {
   pickedVal?: RadioValueType;
   radioStatusChanged?: () => void;
 }
+
+export type RadioGroupRef = {
+  getPickedValue: () => RadioValueType;
+  setPickedValue: (value: RadioValueType) => void;
+};
